@@ -1,0 +1,25 @@
+def check_duplicates(input_string):
+    # Convert input_string to lowercase to treat 'A' and 'a' as the same letter
+    input_string = input_string.lower()
+    
+    # Create a set to store letters we have already seen
+    seen_letters = set()
+    
+    # Iterate through each letter in the input string
+    for letter in input_string:
+        # If the letter is already in the set, it means we have seen it before
+        if letter in seen_letters:
+            return True  # Duplicate found
+        else:
+            seen_letters.add(letter)  # Add letter to the set
+    
+    return False  # No duplicates found
+
+# Take input from the user
+input_str = input("Enter a string: ")
+
+# Check for duplicate letters
+if check_duplicates(input_str):
+    print(f"The string '{input_str}' contains duplicate letters.")
+else:
+    print(f"The string '{input_str}' does not contain duplicate letters.")
